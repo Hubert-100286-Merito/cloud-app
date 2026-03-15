@@ -1,0 +1,30 @@
+services:
+  backend:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8081:8081"
+    environment:
+      - ASPNETCORE_URLS=http://+:8081
+    command: dotnet watch run --non-interactive --urls http://+:8081
+
+  frontend:
+    image: node:24-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/frontend/node_modules # To "anonimowy wolumin" - Docker nie nadpisze go Twoimi plikami z Windowsa
+    ports:
+      - "8082:8080"
+    command: >
+      sh -c "cd frontend && npm install && npm run dev -- --host 0.0.0.0 --port 8080"
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TwojeHaslo123!
+    ports:
+      - "1433:1433"
