@@ -18,3 +18,6 @@
 
 * [x] **Artefakt 1:** Zaplanowano strukturę folderów i diagram C4
 * [x] **Artefakt 2:** Konfiguracja środowiska Docker (Zakończono)
+* [x] **Artefakt 3:**  (Zakończono)
+* [x] **Artefakt 4:**  (Zakończono)
+
