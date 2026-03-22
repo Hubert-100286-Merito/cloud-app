@@ -26,15 +26,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.EnsureCreated();
-    
-    // przykładowe dane dla frontendu
-    if (!dbContext.Tasks.Any())
-    {
-        dbContext.Tasks.Add(new TaskItem { Title = "Zrobić Artefakt 3", IsCompleted = true });
-        dbContext.Tasks.Add(new TaskItem { Title = "Zrobić Artefakt 4", IsCompleted = false });
-        dbContext.SaveChanges();
-    }
+    // Automatyczne aplikowanie migracji przy starcie Dockera
+    dbContext.Database.Migrate(); 
 }
 
 app.UseSwagger();

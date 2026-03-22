@@ -28,3 +28,8 @@ services:
       - MSSQL_SA_PASSWORD=TwojeHaslo123!
     ports:
       - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql # To zapisuje dane bazy na Twoim dysku
+
+volumes:
+  sqlserver_data: # Definicja nazwanego woluminu (Zadanie 5.2)

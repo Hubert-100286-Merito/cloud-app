@@ -15,32 +15,44 @@ public class TasksController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TaskItem>>> GetTasks()
+    public async Task<ActionResult<IEnumerable<TaskReadDto>>> GetTasks()
     {
-        return await _context.Tasks.ToListAsync();
+        var tasks = await _context.Tasks
+            .Select(t => new TaskReadDto { Id = t.Id, Title = t.Title, IsCompleted = t.IsCompleted })
+            .ToListAsync();
+        return Ok(tasks);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<TaskItem>> GetTask(int id)
+    public async Task<ActionResult<TaskReadDto>> GetTask(int id)
     {
         var task = await _context.Tasks.FindAsync(id);
         if (task == null) return NotFound();
-        return task;
+        
+        return new TaskReadDto { Id = task.Id, Title = task.Title, IsCompleted = task.IsCompleted };
     }
 
     [HttpPost]
-    public async Task<ActionResult<TaskItem>> PostTask(TaskItem task)
+    public async Task<ActionResult<TaskReadDto>> PostTask(TaskCreateDto taskDto)
     {
+        var task = new TaskItem { Title = taskDto.Title, IsCompleted = false };
         _context.Tasks.Add(task);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
+
+        var readDto = new TaskReadDto { Id = task.Id, Title = task.Title, IsCompleted = task.IsCompleted };
+        return CreatedAtAction(nameof(GetTask), new { id = task.Id }, readDto);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutTask(int id, TaskItem task)
+    public async Task<IActionResult> PutTask(int id, TaskReadDto taskDto)
     {
-        if (id != task.Id) return BadRequest();
-        _context.Entry(task).State = EntityState.Modified;
+        if (id != taskDto.Id) return BadRequest();
+        
+        var task = await _context.Tasks.FindAsync(id);
+        if (task == null) return NotFound();
+
+        task.Title = taskDto.Title;
+        task.IsCompleted = taskDto.IsCompleted;
         await _context.SaveChangesAsync();
         return NoContent();
     }

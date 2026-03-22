@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/app/backend.csproj": {}
+    "C:\\Users\\huber\\Desktop\\cloud-app\\backend\\backend.csproj": {}
   },
   "projects": {
-    "/app/backend.csproj": {
+    "C:\\Users\\huber\\Desktop\\cloud-app\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/backend.csproj",
+        "projectUniqueName": "C:\\Users\\huber\\Desktop\\cloud-app\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "/app/backend.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/app/obj/",
+        "projectPath": "C:\\Users\\huber\\Desktop\\cloud-app\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\huber\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\huber\\Desktop\\cloud-app\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\huber\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -48,6 +48,16 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -76,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
