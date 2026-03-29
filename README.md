@@ -20,4 +20,5 @@
 * [x] **Artefakt 2:** Konfiguracja środowiska Docker (Zakończono)
 * [x] **Artefakt 3:**  (Zakończono)
 * [x] **Artefakt 4:**  (Zakończono)
+* [x] **Artefakt 5:**  (Zakończono)
 
