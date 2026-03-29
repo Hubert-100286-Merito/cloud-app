@@ -1,6 +1,13 @@
-FROM node:24-slim
+# Etap budowania
+FROM node:24-slim AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "8080"]
+RUN npm run build
+
+# Etap serwowania (Nginx)
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

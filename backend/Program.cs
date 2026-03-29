@@ -25,9 +25,17 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    // Automatyczne aplikowanie migracji przy starcie Dockera
-    dbContext.Database.Migrate(); 
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>(); // Użyj nazwy swojego Contextu
+        context.Database.Migrate();
+        Console.WriteLine("Migracja wykonana pomyślnie!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Błąd migracji: {ex.Message}");
+    }
 }
 
 app.UseSwagger();
