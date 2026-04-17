@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/7a70bf3f-c2c3-49ba-b80e-730322c54b8f/resourceGroups/cloud-project-rg/providers/Microsoft.Web/sites/hubert-task-api",
-    "appService.deploySubpath": "backend"
-}
