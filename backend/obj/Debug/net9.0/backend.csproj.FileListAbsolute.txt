@@ -311,3 +311,9 @@ C:\Users\huber\Desktop\cloud-app\backend\obj\Debug\net9.0\refint\backend.dll
 C:\Users\huber\Desktop\cloud-app\backend\obj\Debug\net9.0\backend.pdb
 C:\Users\huber\Desktop\cloud-app\backend\obj\Debug\net9.0\backend.genruntimeconfig.cache
 C:\Users\huber\Desktop\cloud-app\backend\obj\Debug\net9.0\ref\backend.dll
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\web.config
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\appsettings.Development.json
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\appsettings.json
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\backend.deps.json
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\backend.runtimeconfig.json
+C:\Users\huber\Desktop\cloud-app\backend\bin\Debug\net9.0\deploy\backend.staticwebassets.endpoints.json
