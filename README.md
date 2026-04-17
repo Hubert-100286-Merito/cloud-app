@@ -29,4 +29,4 @@
 * [x] **Artefakt 5:** Rozbudowa Frontendu i integracja z API
 * [x] **Artefakt 6:** Pełne wdrożenie (CRUD) i Hosting (Firebase)
 * [x] **Artefakt 7:** Bezpieczeństwo i Zarządzanie Sekretami (Secret Manager)
-* [ ] **Artefakt 8:** Automatyzacja CI/CD (W trakcie...)
+* [x] **Artefakt 8:** Automatyzacja CI/CD 
